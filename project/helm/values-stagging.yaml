@@ -6,9 +6,7 @@ service:
 image:
   repository: techtrends
   tag: latest
-  pullPolicy: IfNotPresent
-
-replicaCount: 3
+  replicaCount: 3
 
 resources:
   requests:
@@ -17,3 +15,5 @@ resources:
   limits:
     cpu: 500m
     memory: 128Mi
+
+
