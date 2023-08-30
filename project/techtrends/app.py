@@ -99,5 +99,11 @@ def metrics():
     return response
 
 if __name__ == "__main__":
-   logging.basicConfig(level=logging.DEBUG, handlers=[logging.FileHandler("app.log"), logging.StreamHandler(sys.stdout)])
-   app.run(host='0.0.0.0', port='3111', debug=False)
+    stdout_handler = logging.StreamHandler(sys.stdout)
+    stderr_handler = logging.StreamHandler(sys.stderr)
+    
+    format_output = '%(asctime)s - %(levelname)s - %(message)s'
+    
+    logging.basicConfig(format=format_output, level=logging.DEBUG, handlers=[stderr_handler, stdout_handler])
+    
+    app.run(host='0.0.0.0', port='3111', debug=False)
