@@ -16,16 +16,16 @@ spec:
     spec:
       containers:
       - name: techtrends
-        image: 23lalahubglitch/techtrends:latest
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         ports:
-        - containerPort: 3111
+        - containerPort: {{ .Values.containerPort }}
         livenessProbe:
           httpGet:
-            path: /healthz
+            path: {{ .Values.path }}
             port: {{ .Values.containerPort }}
         readinessProbe:
           httpGet:
-            path: /healthz
+            path: {{ .Values.path }}
             port: {{ .Values.containerPort }}
         resources:
           requests:

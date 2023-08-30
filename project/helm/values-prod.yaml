@@ -4,8 +4,6 @@ service:
   port: 7111
 
 image:
-  repository: techtrends
-  tag: latest
   pullPolicy: Always
   replicaCount: 5
 

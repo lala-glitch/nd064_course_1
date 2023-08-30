@@ -4,8 +4,6 @@ service:
   port: 5111
 
 image:
-  repository: techtrends
-  tag: latest
   replicaCount: 3
 
 resources:
